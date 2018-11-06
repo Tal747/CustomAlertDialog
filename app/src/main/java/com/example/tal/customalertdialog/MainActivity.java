@@ -10,9 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     //items in activity_main.xml
@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     LinearLayout dialog;
     //items in dialog.xml
     RadioGroup dialog_type;
+    RadioButton ari, geo;
     EditText dialog_et_x1, dialog_et_d;
 
     //global variables
@@ -41,16 +42,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         tv4 = findViewById(R.id.tv4);
         lv1 = findViewById(R.id.lv1);
         lv1.setOnItemClickListener(this);
+        //items on dialog.xml
+        dialog_type = (RadioGroup) findViewById(R.id.dialog_type);
+        ari = findViewById(R.id.ari);
+        geo = findViewById(R.id.geo);
+        dialog_et_x1 = findViewById(R.id.dialog_et_x1);
+        dialog_et_d = findViewById(R.id.dialog_et_d);
     }
 
     public void OCbtn1(View view) {
         dialog = (LinearLayout) getLayoutInflater().inflate(R.layout.dialog, null);
-        dialog_type = findViewById(R.id.dialog_type);
-        dialog_et_x1 = findViewById(R.id.dialog_et_x1);
-        dialog_et_d = findViewById(R.id.dialog_et_d);
-
         AlertDialog.Builder adb = new AlertDialog.Builder(this);
         adb.setView(dialog);
+        dialog_type.check(R.id.ari);
         adb.setCancelable(false);
         adb.setTitle("Enter Data");
         adb.setPositiveButton("Enter", new DialogInterface.OnClickListener() {
@@ -94,8 +98,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         else if (type == R.id.geo)
             for (int i = 1; i < 20; i++)
                 list[i] = list[i - 1] * d;
-        else
-            Toast.makeText(this, "Please choose progression type.", Toast.LENGTH_LONG);
         for (int i = 0; i < list.length; i++)
             listString[i] = String.valueOf(list[i]);
         ArrayAdapter<String> adp = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, listString);

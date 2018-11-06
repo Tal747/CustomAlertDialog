@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:orientation="horizontal">
-
-    <Space
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.1" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
+    android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,8 +12,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.1"
+                android:layout_height="match_parent"
                 android:text="Progression type:"
                 android:textColor="@android:color/black"
                 android:textSize="14dp" />
@@ -32,8 +20,7 @@
             <RadioGroup
                 android:id="@+id/dialog_type"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="2">
+                android:layout_height="wrap_content">
 
                 <RadioButton
                     android:id="@+id/ari"
@@ -51,57 +38,47 @@
         </LinearLayout>
 
         <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_width="5px"
+            android:layout_height="match_parent" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="X1=" />
 
             <EditText
                 android:id="@+id/dialog_et_x1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number" />
         </LinearLayout>
 
         <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_width="5px"
+            android:layout_height="match_parent" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="d=" />
 
             <EditText
                 android:id="@+id/dialog_et_d"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number" />
         </LinearLayout>
 
-    </LinearLayout>
-
-    <Space
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.1" />
 </LinearLayout>
