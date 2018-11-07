@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         lv1 = findViewById(R.id.lv1);
         lv1.setOnItemClickListener(this);
         //items on dialog.xml
-        dialog_type = (RadioGroup) findViewById(R.id.dialog_type);
+        dialog_type = findViewById(R.id.dialog_type);
         ari = findViewById(R.id.ari);
         geo = findViewById(R.id.geo);
         dialog_et_x1 = findViewById(R.id.dialog_et_x1);
@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         dialog = (LinearLayout) getLayoutInflater().inflate(R.layout.dialog, null);
         AlertDialog.Builder adb = new AlertDialog.Builder(this);
         adb.setView(dialog);
-        dialog_type.check(R.id.ari);
         adb.setCancelable(false);
         adb.setTitle("Enter Data");
         adb.setPositiveButton("Enter", new DialogInterface.OnClickListener() {
@@ -72,7 +71,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         adb.setNegativeButton("Reset", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                type = R.id.ari;
                 x1 = 0;
                 d = 0;
                 fillListView(type, x1, d);
@@ -112,4 +110,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         tv3.setText("n= " + (position + 1));
         tv4.setText("Sn= " + Sn);
     }
+
+
 }
