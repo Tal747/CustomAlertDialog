@@ -110,6 +110,4 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         tv3.setText("n= " + (position + 1));
         tv4.setText("Sn= " + Sn);
     }
-
-
 }
